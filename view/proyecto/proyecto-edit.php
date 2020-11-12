@@ -42,7 +42,7 @@
                                       </label>
                                        <div class="col-md-12 col-sm-12 col-xs-12">
                                           <select class="form-control" name="id_facultad" >
-                                            <option  value="<?php echo $alm->id_facultad; ?>" ><?php echo $alm->nom_facultad; ?></option>
+                                            <option  value="<?php echo $alm->id_facultad; ?>" ><?php echo $alm->id_facultad; ?></option>
                                             <?php foreach($this->model->ListarFacultades() as $r): ?>
                                               <option value="<?php echo $r->id_facultad;?>" ><?php echo $r->nom_facultad; ?></option>
                                             <?php endforeach; ?>

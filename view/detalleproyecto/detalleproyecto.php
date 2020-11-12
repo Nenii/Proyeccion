@@ -773,7 +773,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-primary" name="Guardar"><i class="far fa-check-circle"></i> Enviar</button>
-                                            <a data-dismiss="modal"class="btn btn-danger" href="#"> <i class="far fa-times-circle"></i> Cancelar</a>
+                                             <a data-dismiss="modal"class="btn btn-danger" href="#"> <i class="far fa-times-circle"></i> Cancelar</a>
                                         </div>
                                     </form>
                                 </div>

@@ -39,7 +39,7 @@ class Proyecto
 			die($e->getMessage());
 		}
 	}
-	// Funcion de listar todos los proyectos con cateforia de perfil con estado 1 de activos
+	// Funcion de listar todos los proyectos con cateforia de perfil con estado 1 de activos para el Adm
 	public function Listar()
 	{
 		try
@@ -57,7 +57,42 @@ class Proyecto
 			die($e->getMessage());
 		}
 	}
+	// Funcion de listar todos los proyectos con cateforia de perfil con estado 1 de activos de la sede Usulutan
+	public function ListarUsu()
+	{
+		try
+		{
+			$result = array();
 
+			$stm = $this->pdo->prepare("SELECT * FROM vista_proy WHERE estado = 1 and nom_categoria = 'Perfil de proyecto' AND sede = 'Usulutan'
+			and year(inicio) >= year(now()) order by personas_beneficiarias DESC ");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+// Funcion de listar todos los proyectos con cateforia de perfil con estado 1 de activos de la sede Usulutan
+public function ListarSM()
+{
+	try
+	{
+		$result = array();
+
+		$stm = $this->pdo->prepare("SELECT * FROM vista_proy WHERE estado = 1 and nom_categoria = 'Perfil de proyecto' AND sede = 'San Miguel'
+		and year(inicio) >= year(now()) order by personas_beneficiarias DESC ");
+		$stm->execute();
+
+		return $stm->fetchAll(PDO::FETCH_OBJ);
+	}
+	catch(Exception $e)
+	{
+		die($e->getMessage());
+	}
+}
 	// Funcion de listar todos los proyectos del año actual sin importar el estado
 	public function ListarAll()
 	{

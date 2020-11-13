@@ -1,10 +1,11 @@
  <?  if($_SESSION["nivel"]=="0"){   ?>
     <div class="container-fluid">
         <div class="d-sm-flex align-items-center justify-content-between ">
-            <h1 class="h3 mb-0 text-gray-800">Proyectos en ejecución | <? var_dump ($_SESSION["Sede_origen"]);  ?></h1>
+            <h1 class="h3 mb-0 text-gray-800">Proyectos en ejecución |  <?php echo "Sede ".$_SESSION["Sede_origen"]; ?></h1>
         </div>
     </div>
-<?php if ($_SESSION["nivel"] == 1 or $_SESSION["nivel"] == 2) {?>
+
+
   <div class="container-fluid">
     <div class="card  mb-4">
       <div class="card-header py-3">
@@ -26,7 +27,8 @@
                 </tr>
               </thead>
               <tbody>
-                  <?php foreach($this->model->Listar() as $r): ?>
+            <?php if ($_SESSION["nivel"] == 1){?>
+              <?php foreach($this->model->Listar() as $r): ?>
                         <tr>
                           <td><a><?php echo $r->Nombre_proyecto; ?></a><br/><small>Inicio <?php echo $r->Inicio; ?></small>
                           </td>
@@ -83,7 +85,131 @@
                              ?> </small>
                           </td>
                         </tr>
+                        
                   <?php endforeach; ?>
+
+            <?php } elseif ($_SESSION["nivel"] == 2) {?>
+              <?php if ($_SESSION["Sede_origen"] == 'San Miguel' ) {?>
+                  <?php foreach($this->model->ListarSM() as $r): ?>
+                        <tr>
+                          <td><a><?php echo $r->Nombre_proyecto; ?></a><br/><small>Inicio <?php echo $r->Inicio; ?></small>
+                          </td>
+                          
+                          <td><?php echo $r->nom_facultad;?></td>
+                           <td>
+                            <form><i class="fa fa-male"></i>
+                              <i class="fa fa-male"></i>
+                              <i class="fa fa-male"></i>
+                              <i class="fa fa-male"></i>
+                              <i class="fa fa-male"></i>
+                              <br></form>
+                           <small><?php echo $r->personas_beneficiarias;?> Personas </small>
+                          </td>
+                          <td><small><?php echo $r->sede;?></small></td>
+                          <td>
+                            <!-- Finalizar proyecto -->
+                            <a id="demo" onclick="javascript:return confirm('¿Seguro de finalizar este proyecto?');" data-toggle="tooltip" data-placement="bottom" title="Finalizar proyecto" class="badge badge-primary btn-circle btn-sm" href="?c=proyecto&a=Finalizar&id_proyecto=<?php echo $r->id_proyecto; ?>"><i class="fas fa-hourglass-end"></i></a>
+                             <!-- Finanzas de proyecto -->
+                            <a href="?c=gasto&a=DetalleGastos&id_proyecto=<?php echo $r->id_proyecto; ?>" data-toggle="tooltip" data-placement="bottom" title="Finanzas de proyecto"class="badge badge-success btn-circle btn-sm btn-sm"><strong>$</strong></a>
+                            <!-- Actividades del proyecto -->
+                            <a href="?c=actividades&a=Detalle&id_proyecto=<?php echo $r->id_proyecto; ?>" data-toggle="tooltip" data-placement="bottom" title="Actividades del  proyecto"
+                              class="badge badge-warning btn-circle btn-sm"><i class="far fa-star"></i></a>
+                            <a href=""></a>
+                           <!-- Detalle del proyecto -->
+                            <a href="?c=proyecto&a=Detalle&id_proyecto=<?php echo $r->id_proyecto; ?>" data-toggle="tooltip" data-placement="bottom" title="Detalle del proyecto" class="badge badge-info btn-circle btn-sm"><i class="fa fa-folder"></i></a>
+                            <?php if ($_SESSION["nivel"] == 1 or $_SESSION["nivel"] == 2) {?>
+                            <!-- Eliminar proyecto -->
+                            <a   onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" data-toggle="tooltip" data-placement="bottom" title="Eliminar proyecto" class="badge badge-danger btn-circle btn-sm" href="?c=proyecto&a=Eliminar&id_proyecto=<?php echo $r->id_proyecto; ?>"><i class="fas fa-times"></i></a>
+                            <!-- Actualizar proyecto ?> -->
+                            <a  data-toggle="tooltip" data-placement="bottom" title="Actualizar proyecto" class="badge badge-ligth btn-circle btn-sm btn btn-outline-info" href="?c=proyecto&a=Edit&id_proyecto=<?php echo $r->id_proyecto; ?>"><i class="fas fa-sync-alt"></i></a>
+                          <?php } ?>
+                            <!-- Documentos adjuntos del proyecto -->
+                            <a href="?c=anexos&a=Detalle&id_proyecto=<?php echo $r->id_proyecto; ?>" class="badge badge-ligth btn-circle btn-sm btn btn-outline-dark" data-toggle="tooltip" data-placement="bottom" title="Documentos del proyecto" href="anexos"><i class="fas fa-paperclip"></i></a>
+                          </td>
+                          <td class="project_progress">
+                              <div class="progress">
+                                  <div class="progress-bar progress-bar-striped bg-info" style="width: <?php echo $r->Progreso/$r->DIas*100; ?>%"  role="progressbar" aria-valuenow="<?php echo $r->Progreso; ?>" values="<?php
+                                   echo bcdiv($r->Progreso, $r->DIas, 1) ?>" aria-valuemin="0" aria-valuemax="100">
+                                  </div>
+                              </div>
+                                <small><?php
+                                if ($r->DIas != 0 and $r->DIas_ < 0 )
+                                  {
+                                    echo "100 % Completado";
+                                  }
+                                  else if ($r->Progreso <= 0) {
+                                    echo "0 % Completado";
+                                  }
+                                  else if ($r->DIas != 0 and $r->DIas > 0)
+                                  {
+                                    echo bcdiv($r->Progreso/$r->DIas*100  , '1', 1) ?> % Completado
+                             <?php     }
+                             ?> </small>
+                          </td>
+                        </tr>
+                        
+                  <?php endforeach; ?>
+                        <?php } elseif ($_SESSION["Sede_origen"] == 'Usulutan' ) {?>
+                          <?php foreach($this->model->ListarUsu() as $r): ?>
+                        <tr>
+                          <td><a><?php echo $r->Nombre_proyecto; ?></a><br/><small>Inicio <?php echo $r->Inicio; ?></small>
+                          </td>
+                          
+                          <td><?php echo $r->nom_facultad;?></td>
+                           <td>
+                            <form><i class="fa fa-male"></i>
+                              <i class="fa fa-male"></i>
+                              <i class="fa fa-male"></i>
+                              <i class="fa fa-male"></i>
+                              <i class="fa fa-male"></i>
+                              <br></form>
+                           <small><?php echo $r->personas_beneficiarias;?> Personas </small>
+                          </td>
+                          <td><small><?php echo $r->sede;?></small></td>
+                          <td>
+                            <!-- Finalizar proyecto -->
+                            <a id="demo" onclick="javascript:return confirm('¿Seguro de finalizar este proyecto?');" data-toggle="tooltip" data-placement="bottom" title="Finalizar proyecto" class="badge badge-primary btn-circle btn-sm" href="?c=proyecto&a=Finalizar&id_proyecto=<?php echo $r->id_proyecto; ?>"><i class="fas fa-hourglass-end"></i></a>
+                             <!-- Finanzas de proyecto -->
+                            <a href="?c=gasto&a=DetalleGastos&id_proyecto=<?php echo $r->id_proyecto; ?>" data-toggle="tooltip" data-placement="bottom" title="Finanzas de proyecto"class="badge badge-success btn-circle btn-sm btn-sm"><strong>$</strong></a>
+                            <!-- Actividades del proyecto -->
+                            <a href="?c=actividades&a=Detalle&id_proyecto=<?php echo $r->id_proyecto; ?>" data-toggle="tooltip" data-placement="bottom" title="Actividades del  proyecto"
+                              class="badge badge-warning btn-circle btn-sm"><i class="far fa-star"></i></a>
+                            <a href=""></a>
+                           <!-- Detalle del proyecto -->
+                            <a href="?c=proyecto&a=Detalle&id_proyecto=<?php echo $r->id_proyecto; ?>" data-toggle="tooltip" data-placement="bottom" title="Detalle del proyecto" class="badge badge-info btn-circle btn-sm"><i class="fa fa-folder"></i></a>
+                            <?php if ($_SESSION["nivel"] == 1 or $_SESSION["nivel"] == 2) {?>
+                            <!-- Eliminar proyecto -->
+                            <a   onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" data-toggle="tooltip" data-placement="bottom" title="Eliminar proyecto" class="badge badge-danger btn-circle btn-sm" href="?c=proyecto&a=Eliminar&id_proyecto=<?php echo $r->id_proyecto; ?>"><i class="fas fa-times"></i></a>
+                            <!-- Actualizar proyecto ?> -->
+                            <a  data-toggle="tooltip" data-placement="bottom" title="Actualizar proyecto" class="badge badge-ligth btn-circle btn-sm btn btn-outline-info" href="?c=proyecto&a=Edit&id_proyecto=<?php echo $r->id_proyecto; ?>"><i class="fas fa-sync-alt"></i></a>
+                          <?php } ?>
+                            <!-- Documentos adjuntos del proyecto -->
+                            <a href="?c=anexos&a=Detalle&id_proyecto=<?php echo $r->id_proyecto; ?>" class="badge badge-ligth btn-circle btn-sm btn btn-outline-dark" data-toggle="tooltip" data-placement="bottom" title="Documentos del proyecto" href="anexos"><i class="fas fa-paperclip"></i></a>
+                          </td>
+                          <td class="project_progress">
+                              <div class="progress">
+                                  <div class="progress-bar progress-bar-striped bg-info" style="width: <?php echo $r->Progreso/$r->DIas*100; ?>%"  role="progressbar" aria-valuenow="<?php echo $r->Progreso; ?>" values="<?php
+                                   echo bcdiv($r->Progreso, $r->DIas, 1) ?>" aria-valuemin="0" aria-valuemax="100">
+                                  </div>
+                              </div>
+                                <small><?php
+                                if ($r->DIas != 0 and $r->DIas_ < 0 )
+                                  {
+                                    echo "100 % Completado";
+                                  }
+                                  else if ($r->Progreso <= 0) {
+                                    echo "0 % Completado";
+                                  }
+                                  else if ($r->DIas != 0 and $r->DIas > 0)
+                                  {
+                                    echo bcdiv($r->Progreso/$r->DIas*100  , '1', 1) ?> % Completado
+                             <?php     }
+                             ?> </small>
+                          </td>
+                        </tr>
+                        
+                  <?php endforeach; ?>
+                                  <?php }?>
               </tbody>
             </table>
           </div>

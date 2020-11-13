@@ -83,9 +83,7 @@
                                                 <?php
                                                 for ($i=2005; $i <= (new \DateTime())->format('Y') +1 ; $i++) { ?>
                                                   <option><?php echo $i;?> </option> <?php
-
                                                 }
-                                                
                                                 ?>
                                               </select>
                                         </div>

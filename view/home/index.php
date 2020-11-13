@@ -19,6 +19,7 @@
                 <tr>
                   <th style="width: 20%">Nombre del proyecto</th>
                   <th>Facutad</th>
+                  <th>Beneficiarios</th>
                   <th>Sede</th>
                   <th>Acciones</th>
                   <th>Avance (%)</th>
@@ -40,6 +41,7 @@
                               <br></form>
                            <small><?php echo $r->personas_beneficiarias;?> Personas </small>
                           </td>
+                          <td><small><?php echo $r->sede;?></small></td>
                           <td>
                             <!-- Finalizar proyecto -->
                             <a id="demo" onclick="javascript:return confirm('¿Seguro de finalizar este proyecto?');" data-toggle="tooltip" data-placement="bottom" title="Finalizar proyecto" class="badge badge-primary btn-circle btn-sm" href="?c=proyecto&a=Finalizar&id_proyecto=<?php echo $r->id_proyecto; ?>"><i class="fas fa-hourglass-end"></i></a>

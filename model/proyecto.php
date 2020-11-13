@@ -16,6 +16,7 @@ class Proyecto
 	public $monto;
 	public $inicio_proy;
 	public $final_proy;
+	public $sede;
 	public $periodo;
 	public $cod_proyecto;
 	public $estado;

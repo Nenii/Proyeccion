@@ -1,7 +1,7 @@
  <?  if($_SESSION["nivel"]=="0"){   ?>
     <div class="container-fluid">
         <div class="d-sm-flex align-items-center justify-content-between ">
-            <h1 class="h3 mb-0 text-gray-800">Proyectos en ejecución | San Miguel</h1>
+            <h1 class="h3 mb-0 text-gray-800">Proyectos en ejecución | <? var_dump ($_SESSION["Sede_origen"]);  ?></h1>
         </div>
     </div>
 <?php if ($_SESSION["nivel"] == 1 or $_SESSION["nivel"] == 2) {?>
@@ -19,7 +19,7 @@
                 <tr>
                   <th style="width: 20%">Nombre del proyecto</th>
                   <th>Facutad</th>
-                  <th>#Beneficiarios</th>
+                  <th>Sede</th>
                   <th>Acciones</th>
                   <th>Avance (%)</th>
                 </tr>

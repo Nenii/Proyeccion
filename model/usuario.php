@@ -120,7 +120,8 @@ public function Perfil($user)
 				$_SESSION["nombre_usuario"] = $datos_usuario["nombre_usuario"];
 				$_SESSION["ubicacion_foto"] = $datos_usuario["ubicacion_foto"];
 				$_SESSION["email"]=$datos_usuario["email"];
-				$_SESSION["nivel"]=$datos_usuario["nivel"]; //if($_SESSION["nivel"]=="1"){}
+				$_SESSION["nivel"]=$datos_usuario["nivel"];
+				$_SESSION["Sede_origen"]=$datos_usuario["Sede_origen"]; //if($_SESSION["nivel"]=="1"){} Sede_origen
 
 			}
 			return $query->rowCount();

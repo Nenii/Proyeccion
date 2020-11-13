@@ -1,5 +1,4 @@
 <?php
-
 require("asserts/class.phpmailer.php");
 require("asserts/class.smtp.php");
 
@@ -48,19 +47,19 @@ class EjecutoresController{
         $this->model->Registrar($alm);
 
                 echo '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-                                      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-                                      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                                      <script>
-                                      $(document).ready(function() {
-                                swal({
-                                  title: "Registro exitoso",
-                                   text: "Ejecutor agregado con éxito",
-                                    type: "success"
-                                  },
-                                  function(){
-                                    window.location.href = "http://localhost/Proyeccion/home";
-                                });
-                                }); </script>' ;
+                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                    <script>
+                    $(document).ready(function() {
+              swal({
+                title: "Registro exitoso",
+                  text: "Ejecutor agregado con éxito",
+                  type: "success"
+                },
+                function(){
+                  window.location.href = "http://localhost/Proyeccion/home";
+              });
+              }); </script>' ;
     }
     public function AgregarEjecutor(){
         $alm = new Ejecutores();
@@ -98,23 +97,23 @@ class EjecutoresController{
                         $alm->Sede_origen = $_REQUEST['Sede_origen'];
                         $alm->estado = 1;
                         //var_dump($alm);
-        //header('Location: Proyecto');
-        $this->model->AgregarEjecutor($alm);
-         echo '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-                  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-                  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                  <script>
-                  $(document).ready(function() {
-            swal({
-              title: "Registro exitoso",
-               text: "Ejecutor agregado con éxito",
-                type: "success"
-              },
-              function(){
-                window.location.href = "http://localhost/Proyeccion/Home";
-            });
-            }); </script>' ;
-    }else{
+                        //header('Location: Proyecto');
+                        $this->model->AgregarEjecutor($alm);
+                        echo '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+                                  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+                                  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                                  <script>
+                                  $(document).ready(function() {
+                            swal({
+                              title: "Registro exitoso",
+                              text: "Ejecutor agregado con éxito",
+                                type: "success"
+                              },
+                              function(){
+                                window.location.href = "http://localhost/Proyeccion/Home";
+                            });
+                            }); </script>' ;
+                    }else{
                         $message = 'No se ha podido crear la carpeta';
                       echo "<br>No se ha podido mover el ubicacion: ".$_FILES["ubicacion"]["name"][$i];
                     }

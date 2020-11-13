@@ -8,7 +8,6 @@
   <div class="container-fluid">
     <div class="card  mb-4">
       <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Detalle de proyectos</h6>
           <a href="?c=Proyecto&a=Crud" class="badge badge-primary"><i class="fas fa-plus fa-sm " ></i> Agregar proyecto</a>
           <a href="?c=Home&a=Imprimir" target="_blank" class="badge badge-primary" ><i class="fas fa-download fa-sm " ></i> Proyectos activos</a>
           <a href="?c=Home&a=ImprimirPeriodoActual" target="_blank" class="badge badge-primary" ><i class="fas fa-download fa-sm " ></i> Proyectos <?php echo (new \DateTime())->format('Y'); ?></a>

@@ -19,37 +19,23 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
               <thead>
                 <tr>
-                  <th style="width: 20%">Nombre del proyecto</th>
-                  <th>Facutad</th>
-                  <th>#Beneficiarios</th>
+                <td style="width: 10%">#</td>
+                  <th >Reporte</th>
                   <th>Acciones</th>
-                  <th>Avance (%)</th>
                 </tr>
               </thead>
               <tbody>
                   <tr>
-                    <td><a></a><br/><small>Inicio</small>
+                  <td> #</td>
+                    <td>
+                    <ul>
+                    <li> <a href="?c=Home&a=Imprimir"  target="_blank" data-toggle="tooltip" data-placement="bottom" title="Finanzas de proyecto"><strong>Reporte de proyectos</strong></a><br/></li>
+                    <li><a href="?c=Home&a=Imprimir" target="_blank"  > Finanzas <?php echo (new \DateTime())->format('Y'); ?></a></li>
+
                     </td>
                     
-                    <td></td>
-                     <td>
-                      <form><i class="fa fa-male"></i>
-                        <i class="fa fa-male"></i>
-                        <i class="fa fa-male"></i>
-                        <i class="fa fa-male"></i>
-                        <i class="fa fa-male"></i>
-                        <br></form>
-                     <small> Personas </small>
-                    </td>
                     <td>
-                      <!-- Finalizar proyecto -->
-                      <a id="demo" onclick="javascript:return confirm('¿Seguro de finalizar este proyecto?');" data-toggle="tooltip" data-placement="bottom" title="Finalizar proyecto" class="badge badge-primary btn-circle btn-sm" href="?c=proyecto&a=Finalizar&id_proyecto=<?php echo $r->id_proyecto; ?>"><i class="fas fa-hourglass-end"></i></a>
-                       <!-- Finanzas de proyecto -->
-                      <a href="?c=gasto&a=DetalleGastos&id_proyecto=<?php echo $r->id_proyecto; ?>" data-toggle="tooltip" data-placement="bottom" title="Finanzas de proyecto"class="badge badge-success btn-circle btn-sm btn-sm"><strong>$</strong></a>
-                      <!-- Actividades del proyecto -->
-                      <a href="?c=actividades&a=Detalle&id_proyecto=<?php echo $r->id_proyecto; ?>" data-toggle="tooltip" data-placement="bottom" title="Actividades del  proyecto"
-                        class="badge badge-warning btn-circle btn-sm"><i class="far fa-star"></i></a>
-                      <a href=""></a>
+                  
                      <!-- Detalle del proyecto -->
                       <a href="?c=proyecto&a=Detalle&id_proyecto=<?php echo $r->id_proyecto; ?>" data-toggle="tooltip" data-placement="bottom" title="Detalle del proyecto" class="badge badge-info btn-circle btn-sm"><i class="fa fa-folder"></i></a>
                       

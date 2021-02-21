@@ -39,6 +39,13 @@ class Proyecto
 			die($e->getMessage());
 		}
 	}
+
+
+
+	// ************************************************************************************
+	 /** FUNCIONES GLOBALES */
+
+
 	// Funcion de listar todos los proyectos con cateforia de perfil con estado 1 de activos
 	public function Listar()
 	{
@@ -616,4 +623,50 @@ public function ListarActividadesPorAsignar()
 	}
 	//Funcion par guardar un nuevo proyecto
 
+
+
+
+
+
+	//************************************************************************************************* */
+	// FUNCIONES USU
+	// Funcion de listar todos los proyectos con cateforia de perfil con estado 1 de activos
+	public function ListarUSU()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM vista_proy WHERE estado = 1 and sede ='Usulutan' and nom_categoria = 'Perfil de proyecto'
+			and year(inicio) >= year(now()) order by personas_beneficiarias desc");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+
+
+	//************************************************************************************************* */
+
+	public function ListarSM()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM vista_proy WHERE estado = 1 and sede ='San Miguel' and nom_categoria = 'Perfil de proyecto'
+			and year(inicio) >= year(now()) order by personas_beneficiarias desc");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 }

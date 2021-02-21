@@ -45,6 +45,7 @@ class UsuarioController{
         $alm->nombre_usuario = $_REQUEST['nombre_usuario'];
         $alm->email = $_REQUEST['email'];
         $alm->estado =1;
+        $alm->Sede_origen = $_REQUEST['Sede_origen'];
 
         $this->model->Guardar($alm);
         var_dump($alm);

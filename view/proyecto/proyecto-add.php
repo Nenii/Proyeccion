@@ -19,6 +19,16 @@
                                         <input type="text" name="nom_proyecto" required="" class="form-control" >
                                       </div>
                                 </div>
+                                
+                                <div class="form-group">
+                                      <label for="middle-name" class="control-label col-md-12 col-sm-12 col-sm-12 col-xs-12">Sede<span class="required">*</span></label>
+                                      <div class="col-md-12 col-sm-12 col-xs-12">
+                                          <select class="form-control" name="sede">
+                                          <option value="SM" >San Miguel</option>
+                                          <option value="USU" >Usulutan</option>
+                                          </select>
+                                      </div>
+                                </div>
                                 <div class="form-group">
                                       <label class="control-label col-md-12 col-sm-12 col-xs-12" for="first-name">Categoria <span class="required">*</span>
                                       </label>
@@ -77,20 +87,22 @@
                                 <div class="form-group">
                                       <label class="control-label col-md-12 col-sm-12 col-xs-12" for="first-name">Año<span class="required">*</span>
                                       </label>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                      <div class="btn-group ">
-                                              <select class=" btn" name="periodo" id="sel1">
-                                                <?php
-                                                for ($i=2005; $i <= (new \DateTime())->format('Y') +1 ; $i++) { ?>
-                                                  <option><?php echo $i;?> </option> <?php
-
-                                                }
-                                                
-                                                ?>
-                                              </select>
-                                        </div>
+                                      <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="btn-group ">
+                                                    <select class=" btn" name="periodo" id="sel1">
+                                                    
+                                                      <?php
+                                                      for ($i=2010; $i <= (new \DateTime())->format('Y') ; $i++) { ?>
+                                                        <option selected><?php echo $i;?> </option> <?php
+                                                        }
+                                                      ?>
+                                                      <option value=""><?php echo (new \DateTime())->format('Y') +1?></option>
+                                                    </select>
+                                              </div>
+                                      </div>
                                 </div>
-                                </div>
+                                
+                                
                                 <div class="form-group">
                                       <label for="middle-name" class="control-label col-md-12 col-sm-12 col-sm-12 col-xs-12">Código de proyecto<span class="required">*</span></label>
                                       <div class="col-md-12 col-sm-12 col-xs-12">PSO

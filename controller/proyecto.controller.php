@@ -97,6 +97,7 @@ class ProyectoController{
                             $alm->id_proyecto;
                             $alm->nom_proyecto = $_REQUEST['nom_proyecto'];
                             $alm->ubicacion=($_FILES["ubicacion"]["name"][$i]);
+                            $alm->sede = $_REQUEST['sede'];
                             $alm->id_beneficiarios = $_REQUEST['id_beneficiarios'];
                             $alm->monto = $_REQUEST['monto'];
                             $alm->inicio_proy = $_REQUEST['inicio_proy'];

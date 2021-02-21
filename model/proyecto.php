@@ -12,6 +12,7 @@ class Proyecto
 	public $nom_proyecto;
 	public $id_facultad;
 	public $ubicacion;
+	public $sede;
 	public $id_beneficiarios;
 	public $monto;
 	public $inicio_proy;
@@ -581,8 +582,8 @@ public function ListarActividadesPorAsignar()
 	{
 		try
 		{
-		$sql = "INSERT INTO proyecto(id_proyecto,nom_proyecto,id_facultad,ubicacion,id_beneficiarios,monto, inicio_proy,final_proy,periodo,cod_proyecto,estado,id_categoria)
-		        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$sql = "INSERT INTO proyecto(id_proyecto,nom_proyecto,id_facultad,ubicacion,sede,id_beneficiarios,monto, inicio_proy,final_proy,periodo,cod_proyecto,estado,id_categoria)
+		        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
@@ -591,6 +592,7 @@ public function ListarActividadesPorAsignar()
                     $data->nom_proyecto,
                     $data->id_facultad,
                     $data->ubicacion,
+                    $data->sede,
                     $data->id_beneficiarios,
                     $data->monto,
                     $data->inicio_proy,

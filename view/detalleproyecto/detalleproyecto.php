@@ -51,7 +51,7 @@
                     </p>
                     <hr>
                     <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
-                    <p class="text-muted">Malibu, California</p>
+                    <p class="text-muted"><?php echo $alm->sede ?></p>
                     <hr>
                     <strong><i class="far fa-file-alt mr-1"></i> Documento</strong>
                     <p class="text-muted"><?php echo $alm->archivo ?></p>

@@ -9,7 +9,7 @@
                             <div class="sparkline8-hd">
                                 <div class="main-sparkline8-hd">
                                     <h1>Resumen ejecutivo | Completados</h1><br>
-                                    <a class="btn btn-primary" href="?c=Proyecto&a=Crud">Nuevo proyecto</a>
+                                    <a href="?c=Proyecto&a=Crud" class="badge badge-primary"><i class="fas fa-plus fa-sm " ></i> Nuevo resumen ejecutivo</a>
                                 
                                 </div>
                             </div>

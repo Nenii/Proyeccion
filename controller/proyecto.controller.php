@@ -69,7 +69,10 @@ class ProyectoController{
         }
        require_once 'view/layout/header.php';
        require_once 'view/detalleproyecto/detalleproyecto.php';
+       require_once 'view/detalleproyecto/modal.php';
        require_once 'view/layout/footer.php';
+       
+ 
     }
 
     public function Guardar(){

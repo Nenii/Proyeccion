@@ -51,6 +51,8 @@
     .progress-bar-info {
         border-bottom-color: #5bc0de;
     }
+
+   
     .progress-bar-warning {
         border-bottom-color: #f0a839;
     }

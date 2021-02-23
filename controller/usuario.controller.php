@@ -61,7 +61,6 @@ class UsuarioController{
 
     # definimos la carpeta destino
     $carpetaDestino="files/fotos/";
-    var_dump($_FILES["ubicacion_foto"]);
     # si hay algun ubicacion_foto que subir
     if(isset($_FILES["ubicacion_foto"]["name"][0]))
     {
@@ -83,7 +82,6 @@ class UsuarioController{
                             $alm->id_usuario = $_REQUEST['id_usuario'];
                             $alm->ubicacion_foto=($_FILES["ubicacion_foto"]["name"][$i]);
                            
-                             var_dump($alm);
                              $this->model->ActualizarFoto($alm);
                             echo '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
                                       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>

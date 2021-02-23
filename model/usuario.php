@@ -138,12 +138,15 @@ try
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
+					
                     $data->ubicacion_foto
 					)
 				);
-		} catch (Exception $e)
-		{
+		}catch (PDOException $e) {
 			die($e->getMessage());
 		}
-}
+	}
+	
+	
+
 }

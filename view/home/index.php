@@ -231,6 +231,8 @@
               </div>
             </div>
         </div>
+
+    <? }?>
      <!-- PROYECTOS PENDIENTES DE FINALIZAR -->
             <div class="container-fluid">
                 <div class="card  mb-4">

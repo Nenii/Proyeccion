@@ -24,8 +24,8 @@
                                       <label for="middle-name" class="control-label col-md-12 col-sm-12 col-sm-12 col-xs-12">Sede<span class="required">*</span></label>
                                       <div class="col-md-12 col-sm-12 col-xs-12">
                                           <select class="form-control" name="sede">
-                                          <option value="SM" >San Miguel</option>
-                                          <option value="USU" >Usulutan</option>
+                                          <option value="San Miguel" >San Miguel</option>
+                                          <option value="Usulutan" >Usulutan</option>
                                           </select>
                                       </div>
                                 </div>

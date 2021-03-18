@@ -24,7 +24,7 @@
                                   echo "Vencido";
                                 } ?> </span>
                           </li>
-                          <li class="list-group-item">
+                          <li class="list-group-item"> 
                             <b>Inicio</b> <a class="float-right"><?php echo $alm->Inicio ?></a>
                           </li>
                           <li class="list-group-item">
@@ -37,7 +37,8 @@
                             <b>Año</b> <a class="float-right"><?php echo $alm->periodo ?></a>
                           </li>
                         </ul>
-                      <a href="?c=proyecto&a=ImprimirReporte&id_proyecto=<?php echo $alm->id_proyecto; ?>" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Reporte de proyecto" class="btn btn-primary btn-block"><i class="fa fa-print"></i><b> Imprimir</b></a>
+                        <a href="?c=proyecto&a=ImprimirReporte&id_proyecto=<?php echo $alm->id_proyecto; ?>" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Reporte de proyecto" class="btn btn-primary btn-block"><i class="fa fa-print"></i><b> Imprimir</b></a>
+                        <a href="" target="_blank" data-toggle="modal" data-target="#AgregarResumen" title="Resumen ejecutivo" class="btn btn-primary btn-block"><i class="fa fa-print"></i><b> Resumen ejecutivo</b></a>
                 </div>
             </div>
             <div class="card card-primary">
@@ -265,3 +266,6 @@
       }); </script>
 
     
+
+    
+

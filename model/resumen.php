@@ -3,7 +3,7 @@ require_once 'database.php';
 class Resumen
 {
 	private $pdo;
-    public $id_actividades;
+    public $id_resumen;
     public $nom_actividad;
     public $objetivo;
     public $descripcion;

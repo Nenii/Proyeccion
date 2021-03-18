@@ -30,7 +30,9 @@
 
                         
                         <?php  
+                         echo $_SESSION["Sede_origen"];
                             if($_SESSION["Sede_origen"]== "Global") {
+                             
                               foreach($this->model->Listar() as $r): ?>
                                 <tr>
                                   <td><a><?php echo $r->Nombre_proyecto; ?></a><br/><small>Inicio <?php echo $r->Inicio; ?></small>

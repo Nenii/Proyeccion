@@ -24,7 +24,7 @@
                                   echo "Vencido";
                                 } ?> </span>
                           </li>
-                          <li class="list-group-item">
+                          <li class="list-group-item"> 
                             <b>Inicio</b> <a class="float-right"><?php echo $alm->Inicio ?></a>
                           </li>
                           <li class="list-group-item">

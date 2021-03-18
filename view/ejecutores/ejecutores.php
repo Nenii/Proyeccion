@@ -210,9 +210,9 @@
                                                     <input type="text" name="dui" class="form-control" placeholder="Numero de DUI" />
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div><br>
                                         <div class="form-group">
-                                      <label class="control-label col-md-12 col-sm-12 col-xs-12" required="" for="first-name">Cargar documento<span class="required">*</span>
+                                      <label class="control-label col-md-12 col-sm-12 col-xs-12" required="" for="first-name">Foto de perfil<span class="required">*</span>
                                       </label>
                                       <div class="col-md-12 col-sm-12 col-xs-12">
                                         <input class="btn btn-primary" type="file" name="ubicacion_foto[]" id="ubicacion_foto[]">

@@ -26,16 +26,16 @@
                                             </div>
                                             <div class="col-lg-12" >
                                             <p style="line-height: 50%; margin: 20px;   ">
-                                           <p> La <input type="text"class="col-lg-4" name="facultad" class="form-control" placeholder="Nombre facultad" /> y en coordinación con 
-                                            <input type="text"class="col-lg-4" name="autoridades" class="form-control" placeholder="Autoridades de apoyo" />en el periodo de
-                                            <input type="text"class="col-lg-4" name="fecha" class="form-control" placeholder="fecha" /> la ejecución de proyecto 
-                                            <input type="text"class="col-lg-4" name="proyecto" class="form-control" placeholder="Nombre del proyecto" /> desarrollado por 
-                                            <input type="text"class="col-lg-4" name="ejecutor" class="form-control" placeholder="Docente ejecutor" /> el cual iba orientado a 
-                                            <input type="text"class="col-lg-4" name="impacto" class="form-control" placeholder="Impacto del proyecto" /> con el objetivo de 
-                                            <input type="text"class="col-lg-4" name="objetivo" class="form-control" placeholder="Objetivo del proyecto" /> donde se vieron beneficiados 
-                                            <input type="text"class="col-lg-4" name="beneficiarios" class="form-control" placeholder="Numero de Beneficiarios del proyecto" /> proyecto que fue desarrollado en 
-                                            <input type="text"class="col-lg-4" name="comunidad" class="form-control" placeholder="Comunidad beneficiada" /> Obteniendo los siguientes resultados 
-                                            <input type="text"class="col-lg-4" name="resultado" class="form-control" placeholder="Resultados" /> </p>
+                                           <p> La <input type="text"class="col-lg-4" name="facultad" class="form-control" value="<?php echo $alm->nom_facultad ?>" placeholder="Nombre facultad" /> y en coordinación con 
+                                            <input type="text"class="col-lg-4" name="autoridades" class="form-control" value="<?php echo $alm->periodo ?>" placeholder="Autoridades de apoyo" />en el periodo de
+                                            <input type="text"class="col-lg-4" name="fecha" class="form-control" value="" placeholder="fecha" /> la ejecución de proyecto 
+                                            <input type="text"class="col-lg-4" name="proyecto" class="form-control" value="<?php echo $alm->Nombre_proyecto ?>" placeholder="Nombre del proyecto" /> desarrollado por 
+                                            <input type="text"class="col-lg-4" name="ejecutor" class="form-control" value="<?php echo $alm->periodo ?>" placeholder="Docente ejecutor" /> el cual iba orientado a 
+                                            <input type="text"class="col-lg-4" name="impacto" class="form-control" value="<?php echo $alm->periodo ?>"="Impacto del proyecto" /> con el objetivo de 
+                                            <input type="text"class="col-lg-4" name="objetivo" class="form-control"value="<?php echo $alm->periodo ?>" placeholder="Objetivo del proyecto" /> donde se vieron beneficiados 
+                                            <input type="text"class="col-lg-4" name="beneficiarios" class="form-control"value="<?php echo $alm->periodo ?>" placeholder="Numero de Beneficiarios del proyecto" /> proyecto que fue desarrollado en 
+                                            <input type="text"class="col-lg-4" name="comunidad" class="form-control"value="<?php echo $alm->periodo ?>" placeholder="Comunidad beneficiada" /> Obteniendo los siguientes resultados 
+                                            <input type="text"class="col-lg-4" name="resultado" class="form-control"value="<?php echo $alm->periodo ?>" placeholder="Resultados" /> </p>
                                                 </p>
                                             </div>
                                         </div>

@@ -31,5 +31,8 @@ class HomeController{
     public function Eliminar(){
         header('Location: index.php');
     }
+     public function Terminados(){
+        require_once 'view/home/terminados.php';
+    }
 }
 

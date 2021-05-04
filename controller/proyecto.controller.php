@@ -14,6 +14,10 @@ class ProyectoController{
        require_once 'view/layout/footer.php';
        
     }
+      public function Terminados(){
+        require_once 'view/home/terminados.php';
+    }
+}
     public function Imprimir(){
        require_once 'view/layout/header.php';
        require_once 'view/proyecto/ImprimirProyecto.php';
